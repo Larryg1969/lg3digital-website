@@ -1,36 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --bg: oklch(98% 0.006 250);
-  --surface: oklch(100% 0 0);
-  --ink: oklch(18% 0.025 260);
-  --muted: oklch(40% 0.02 260);
-  --brand: oklch(46% 0.16 275);
-  --brand-dark: oklch(24% 0.20 275);
-  --brand-mid: oklch(36% 0.18 275);
-  --brand-ink: oklch(97% 0.01 275);
-  --accent: oklch(72% 0.17 55);
-  --line: oklch(88% 0.012 260);
-}
-
-@theme inline {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-ink: var(--ink);
-  --color-muted: var(--muted);
-  --color-brand: var(--brand);
-  --color-brand-dark: var(--brand-dark);
-  --color-brand-mid: var(--brand-mid);
-  --color-brand-ink: var(--brand-ink);
-  --color-accent: var(--accent);
-  --color-line: var(--line);
+/* Tailwind v4: define color tokens with direct values so utilities generate correctly */
+@theme {
+  --color-bg: oklch(98% 0.006 250);
+  --color-surface: oklch(100% 0 0);
+  --color-ink: oklch(18% 0.025 260);
+  --color-muted: oklch(40% 0.02 260);
+  --color-brand: oklch(46% 0.16 275);
+  --color-brand-dark: oklch(24% 0.20 275);
+  --color-brand-mid: oklch(36% 0.18 275);
+  --color-brand-ink: oklch(97% 0.01 275);
+  --color-accent: oklch(72% 0.17 55);
+  --color-line: oklch(88% 0.012 260);
   --font-sans: var(--font-sans);
 }
 
-@keyframes hero-in {
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+/* Hero entrance — elements default visible; animation is a pure enhancement */
+@keyframes hero-slide-up {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -39,27 +33,20 @@
 }
 
 .hero-animate {
-  animation: hero-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-slide-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero-animate-delay-1 { animation-delay: 0.1s; }
-.hero-animate-delay-2 { animation-delay: 0.22s; }
-.hero-animate-delay-3 { animation-delay: 0.34s; }
+.hero-delay-1 { animation-delay: 0.08s; }
+.hero-delay-2 { animation-delay: 0.18s; }
+.hero-delay-3 { animation-delay: 0.28s; }
+.hero-delay-4 { animation-delay: 0.38s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-animate {
     animation: none;
-    opacity: 1;
-    transform: none;
   }
-
   *, *::before, *::after {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-body {
-  background: var(--bg);
-  color: var(--ink);
 }
