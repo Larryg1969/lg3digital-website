@@ -1,3 +1,5 @@
+import ContactForm from "./ContactForm";
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -194,46 +196,7 @@ export default function Home() {
                   with some ideas — no obligation.
                 </p>
               </div>
-              <form className="flex flex-col gap-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <label className="flex flex-col gap-2 text-sm font-medium text-ink">
-                    Name
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="Your name"
-                      className="rounded-lg border border-line bg-bg px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted focus:border-brand"
-                    />
-                  </label>
-                  <label className="flex flex-col gap-2 text-sm font-medium text-ink">
-                    Email
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="you@example.com"
-                      className="rounded-lg border border-line bg-bg px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted focus:border-brand"
-                    />
-                  </label>
-                </div>
-                <label className="flex flex-col gap-2 text-sm font-medium text-ink">
-                  How can we help?
-                  <textarea
-                    name="message"
-                    rows={4}
-                    required
-                    placeholder="Tell us about your business and what you need..."
-                    className="rounded-lg border border-line bg-bg px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted focus:border-brand"
-                  />
-                </label>
-                <button
-                  type="submit"
-                  className="self-start rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-ink transition-opacity hover:opacity-90"
-                >
-                  Send message
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </section>
