@@ -1,3 +1,76 @@
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "LG3 Digital",
+  url: "https://www.lg3digital.com",
+  email: "hello@lg3digital.com",
+  description:
+    "LG3 Digital helps small businesses in Wooster, Ohio manage their website, grow their social media presence, build custom AI-powered tools, and train their team to use AI.",
+  "@id": "https://www.lg3digital.com/#business",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Wooster",
+    addressRegion: "OH",
+    addressCountry: "US",
+  },
+  areaServed: [
+    { "@type": "City", name: "Wooster", containedInPlace: { "@type": "State", name: "Ohio" } },
+    { "@type": "County", name: "Wayne County", containedInPlace: { "@type": "State", name: "Ohio" } },
+    { "@type": "City", name: "Orrville", containedInPlace: { "@type": "State", name: "Ohio" } },
+    { "@type": "City", name: "Millersburg", containedInPlace: { "@type": "State", name: "Ohio" } },
+    { "@type": "State", name: "Ohio" },
+  ],
+  priceRange: "$$",
+  serviceType: [
+    "Website Management",
+    "Social Media Management",
+    "Custom AI Tools",
+    "AI Training",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Digital Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Website Management",
+          description:
+            "Build, host, and maintain your business website — new pages, fresh copy, fixed bugs.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Social Media Management",
+          description:
+            "Consistent posting, content planning, and brand voice across the platforms your customers use.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Custom AI Tools",
+          description:
+            "Booking widgets, inventory trackers, internal dashboards — built fast with Claude Code.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI Training",
+          description:
+            "Hands-on sessions that show your team how to use AI for the parts of the job that take the most time.",
+        },
+      },
+    ],
+  },
+};
+
 const services = [
   {
     title: "Website management",
@@ -20,6 +93,10 @@ const services = [
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <header className="sticky top-0 z-50 border-b border-line bg-bg/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="#" className="font-display text-lg font-semibold tracking-[-0.02em]">
@@ -48,10 +125,10 @@ export default function Home() {
               <span className="text-brand">handled.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
-              LG3 Digital is a one-person shop that does the digital work
-              small businesses don&apos;t have time for: keeping your site
-              running, your socials active, and your team comfortable using
-              AI day to day.
+              LG3 Digital is a Wooster, Ohio-based one-person shop that does
+              the digital work small businesses don&apos;t have time for:
+              keeping your site running, your socials active, and your team
+              comfortable using AI day to day.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
@@ -98,16 +175,17 @@ export default function Home() {
               </h2>
               <div className="flex flex-col gap-8 text-lg leading-8 text-muted">
                 <p>
-                  Most small businesses can&apos;t justify a full marketing
-                  team or an in-house developer — but they still need a
-                  website that works, social channels that get attention, and
-                  a way to keep up as AI changes how work gets done.
+                  Most small businesses in Wooster and Wayne County can&apos;t
+                  justify a full marketing team or an in-house developer —
+                  but they still need a website that works, social channels
+                  that get attention, and a way to keep up as AI changes how
+                  work gets done.
                 </p>
                 <p>
-                  That&apos;s the gap LG3 Digital fills. You get one person
-                  who knows your business, builds the tools, manages the
-                  accounts, and explains it all in plain language — not an
-                  agency retainer or a confusing dashboard.
+                  That&apos;s the gap LG3 Digital fills. You get one local
+                  person who knows your business, builds the tools, manages
+                  the accounts, and explains it all in plain language — not
+                  an agency retainer or a confusing dashboard.
                 </p>
               </div>
             </div>
