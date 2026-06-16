@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 
 const sora = Sora({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
-const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const siteUrl = "https://www.lg3digital.com";
@@ -42,14 +37,7 @@ export const metadata: Metadata = {
     title: "LG3 Digital — Web, Social & AI Services for Small Business",
     description:
       "Website management, social media, custom AI tools, and AI training for small businesses in Wooster, Ohio — without the agency overhead.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LG3 Digital",
-      },
-    ],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "LG3 Digital" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -58,13 +46,8 @@ export const metadata: Metadata = {
       "Website management, social media, custom AI tools, and AI training for small businesses — without the agency overhead.",
     images: ["/og-image.png"],
   },
-  alternates: {
-    canonical: siteUrl,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  alternates: { canonical: siteUrl },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -73,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable} h-full`}>
+    <html lang="en" className={`${sora.variable} h-full`}>
       <body className="min-h-full flex flex-col font-sans antialiased">
         {children}
       </body>

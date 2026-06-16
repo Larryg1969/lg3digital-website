@@ -3,12 +3,14 @@
 :root {
   --bg: oklch(98% 0.006 250);
   --surface: oklch(100% 0 0);
-  --ink: oklch(22% 0.025 260);
-  --muted: oklch(46% 0.02 260);
+  --ink: oklch(18% 0.025 260);
+  --muted: oklch(40% 0.02 260);
   --brand: oklch(46% 0.16 275);
-  --brand-ink: oklch(98% 0.01 275);
-  --accent: oklch(70% 0.17 55);
-  --line: oklch(90% 0.01 260);
+  --brand-dark: oklch(24% 0.20 275);
+  --brand-mid: oklch(36% 0.18 275);
+  --brand-ink: oklch(97% 0.01 275);
+  --accent: oklch(72% 0.17 55);
+  --line: oklch(88% 0.012 260);
 }
 
 @theme inline {
@@ -17,17 +19,41 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-mid: var(--brand-mid);
   --color-brand-ink: var(--brand-ink);
   --color-accent: var(--accent);
   --color-line: var(--line);
   --font-sans: var(--font-sans);
-  --font-display: var(--font-display);
 }
 
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: hero-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-animate-delay-1 { animation-delay: 0.1s; }
+.hero-animate-delay-2 { animation-delay: 0.22s; }
+.hero-animate-delay-3 { animation-delay: 0.34s; }
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-animate {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
