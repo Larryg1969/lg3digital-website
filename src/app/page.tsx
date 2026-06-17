@@ -82,8 +82,8 @@ export default function Home() {
           </a>
         </header>
 
-        <section className="mx-auto max-w-6xl px-6 pb-24 pt-10 sm:pb-32 sm:pt-14">
-          <p className="hero-animate text-sm font-medium uppercase tracking-widest text-brand-ink opacity-50">
+        <section className="mx-auto max-w-6xl px-6 pb-16 pt-10 sm:pb-24 sm:pt-14">
+          <p className="hero-animate text-sm font-medium text-brand-ink" style={{ opacity: 0.45, letterSpacing: "0.04em" }}>
             Wooster, Ohio
           </p>
 
@@ -128,15 +128,18 @@ export default function Home() {
         <section id="services" className="bg-surface">
           <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
             <h2
-              className="font-semibold tracking-[-0.025em] text-ink"
+              data-reveal="slide-up"
+              className="text-balance font-semibold tracking-[-0.025em] text-ink"
               style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)" }}
             >
               What we take off your plate
             </h2>
             <ul className="mt-12 divide-y divide-line">
-              {services.map((service) => (
+              {services.map((service, i) => (
                 <li
                   key={service.title}
+                  data-reveal="slide-left"
+                  style={{ ["--i" as string]: i }}
                   className="grid gap-3 py-8 sm:grid-cols-[1fr_1.4fr] sm:gap-16 sm:py-10"
                 >
                   <h3 className="text-xl font-semibold tracking-[-0.02em] text-ink">
@@ -154,25 +157,26 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
             <div className="grid gap-10 sm:grid-cols-[1fr_1.3fr] sm:gap-20">
               <h2
+                data-reveal="slide-up"
                 className="text-balance font-semibold tracking-[-0.025em] text-brand-ink"
                 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)" }}
               >
                 Built for businesses without an IT department
               </h2>
-              <div className="flex flex-col gap-6 text-base leading-8" style={{ color: "oklch(97% 0.01 275 / 65%)" }}>
-                <p>
+              <div className="flex flex-col gap-6 text-base leading-8" style={{ color: "oklch(80% 0.015 275)" }}>
+                <p data-reveal="fade-blur" style={{ ["--i" as string]: 0 }}>
                   Most small businesses in Wooster and Wayne County can&apos;t
                   justify a full marketing team or an in-house developer — but
                   they still need a website that works, social channels that get
                   attention, and a way to keep up as AI changes how work gets done.
                 </p>
-                <p>
+                <p data-reveal="fade-blur" style={{ ["--i" as string]: 1 }}>
                   That&apos;s the gap LG3 Digital fills. You get one local person
                   who knows your business, builds the tools, manages the accounts,
                   and explains it all in plain language — not an agency retainer
                   or a confusing dashboard.
                 </p>
-                <p className="font-semibold text-accent">
+                <p data-reveal="fade-blur" style={{ ["--i" as string]: 2 }} className="font-semibold text-accent">
                   A one-person shop is a feature, not a compromise.
                 </p>
               </div>
@@ -184,7 +188,7 @@ export default function Home() {
         <section id="contact" className="bg-surface">
           <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
             <div className="grid gap-12 sm:grid-cols-[1fr_1.3fr] sm:gap-20">
-              <div>
+              <div data-reveal="slide-up">
                 <h2
                   className="text-balance font-semibold tracking-[-0.025em] text-ink"
                   style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)" }}
@@ -196,7 +200,9 @@ export default function Home() {
                   with some ideas — no obligation.
                 </p>
               </div>
-              <ContactForm />
+              <div data-reveal="slide-up" style={{ ["--i" as string]: 1 }}>
+                <ContactForm />
+              </div>
             </div>
           </div>
         </section>

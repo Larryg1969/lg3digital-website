@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
+import ScrollReveal from "./ScrollReveal";
 
 const sora = Sora({
   variable: "--font-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sora.variable} h-full`}>
       <body className="min-h-full flex flex-col font-sans antialiased">
+        <ScrollReveal />
         {children}
       </body>
     </html>

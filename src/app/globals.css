@@ -50,3 +50,41 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ─── Scroll Reveal ───────────────────────────────────────────────────────── */
+/* Gated on .reveal-ready so elements stay visible if JS hasn't run */
+
+.reveal-ready [data-reveal="slide-up"] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.reveal-ready [data-reveal="slide-left"] {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.reveal-ready [data-reveal="fade-blur"] {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(3px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 100ms);
+}
+
+.reveal-ready [data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}

@@ -66,11 +66,11 @@ export default function ContactForm() {
         />
       </label>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
         <button
           type="submit"
           disabled={status === "sending"}
-          className="self-start rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-ink transition-opacity hover:opacity-90 disabled:opacity-50"
+          className="w-full rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-ink transition-opacity hover:opacity-90 disabled:opacity-50 sm:w-auto"
         >
           {status === "sending" ? "Sending…" : "Send message"}
         </button>
