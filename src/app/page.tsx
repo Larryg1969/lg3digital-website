@@ -1,3 +1,4 @@
+import React from "react";
 import ContactForm from "./ContactForm";
 
 const jsonLd = {
@@ -149,6 +150,90 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* About */}
+        <section id="about" className="bg-bg border-t border-line">
+          <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+            <div className="grid gap-10 sm:grid-cols-[auto_1fr] sm:gap-16 sm:items-start">
+
+              {/*
+                Photo placeholder — replace this entire block with:
+                <div data-reveal="slide-up" className="flex justify-center sm:justify-start">
+                  <img
+                    src="/larry.jpg"
+                    alt="Larry Geraghty, founder of LG3 Digital"
+                    className="h-32 w-32 rounded-2xl object-cover sm:h-40 sm:w-40"
+                  />
+                </div>
+                once you have a headshot in /public/larry.jpg
+              */}
+              <div data-reveal="slide-up" className="flex justify-center sm:justify-start">
+                <div
+                  className="flex h-32 w-32 items-center justify-center rounded-2xl bg-brand-mid sm:h-40 sm:w-40"
+                  aria-label="Photo of Larry Geraghty"
+                >
+                  <span
+                    className="font-semibold text-brand-ink"
+                    style={{ fontSize: "2rem", letterSpacing: "-0.02em" }}
+                    aria-hidden="true"
+                  >
+                    LG
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <div data-reveal="slide-up" style={{ ["--i" as string]: 0 }}>
+                  <p className="text-sm font-medium text-accent" style={{ letterSpacing: "0.01em" }}>
+                    Who&apos;s behind LG3 Digital
+                  </p>
+                  <h2
+                    className="mt-3 text-balance font-semibold tracking-[-0.025em] text-ink"
+                    style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)" }}
+                  >
+                    Larry Geraghty, Founder
+                  </h2>
+                </div>
+
+                <div
+                  data-reveal="fade-blur"
+                  style={{ ["--i" as string]: 1, fontSize: "1.0625rem" } as React.CSSProperties}
+                  className="mt-5 max-w-2xl leading-8 text-muted"
+                >
+                  <p>
+                    I&apos;ve spent years working in technology — and I kept noticing the same gap:
+                    the tools that give big companies an edge online were out of reach for most
+                    small businesses in places like Wooster. A well-maintained website, a real
+                    social presence, AI that actually saves time — these shouldn&apos;t require
+                    an agency budget or an in-house team.
+                  </p>
+                  <p className="mt-4">
+                    LG3 Digital is how I close that gap. You get one person who picks up the
+                    phone, knows your business by name, and does the work — not a ticket number
+                    in a queue.
+                  </p>
+                </div>
+
+                <ul
+                  data-reveal="slide-up"
+                  style={{ ["--i" as string]: 2 }}
+                  className="mt-8 flex flex-col gap-3 text-sm font-medium text-ink"
+                >
+                  {[
+                    "Based in Wooster, Ohio — serving Wayne County and beyond",
+                    "One point of contact: no account managers, no handoffs",
+                    "Reach me directly by email or phone — not a support ticket",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-0.5 text-accent" aria-hidden="true">—</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
