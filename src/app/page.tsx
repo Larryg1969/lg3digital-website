@@ -158,30 +158,12 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
             <div className="grid gap-10 sm:grid-cols-[auto_1fr] sm:gap-16 sm:items-start">
 
-              {/*
-                Photo placeholder — replace this entire block with:
-                <div data-reveal="slide-up" className="flex justify-center sm:justify-start">
-                  <img
-                    src="/larry.jpg"
-                    alt="Larry Geraghty, founder of LG3 Digital"
-                    className="h-32 w-32 rounded-2xl object-cover sm:h-40 sm:w-40"
-                  />
-                </div>
-                once you have a headshot in /public/larry.jpg
-              */}
               <div data-reveal="slide-up" className="flex justify-center sm:justify-start">
-                <div
-                  className="flex h-32 w-32 items-center justify-center rounded-2xl bg-brand-mid sm:h-40 sm:w-40"
-                  aria-label="Photo of Larry Geraghty"
-                >
-                  <span
-                    className="font-semibold text-brand-ink"
-                    style={{ fontSize: "2rem", letterSpacing: "-0.02em" }}
-                    aria-hidden="true"
-                  >
-                    LG
-                  </span>
-                </div>
+                <img
+                  src="/Headshot.png"
+                  alt="Larry Geraghty, founder of LG3 Digital"
+                  className="h-32 w-32 rounded-2xl object-cover sm:h-40 sm:w-40"
+                />
               </div>
 
               <div>
@@ -203,16 +185,18 @@ export default function Home() {
                   className="mt-5 max-w-2xl leading-8 text-muted"
                 >
                   <p>
-                    I&apos;ve spent years working in technology — and I kept noticing the same gap:
-                    the tools that give big companies an edge online were out of reach for most
-                    small businesses in places like Wooster. A well-maintained website, a real
-                    social presence, AI that actually saves time — these shouldn&apos;t require
-                    an agency budget or an in-house team.
+                    For over 20 years I&apos;ve worked in customer support and technology
+                    consulting — helping Fortune 100 companies build the systems, workflows,
+                    and digital tools that make them run. I&apos;ve seen firsthand what
+                    separates businesses that grow from businesses that stall, and most of it
+                    comes down to the basics: a website that works, a consistent presence online,
+                    and staff who know how to use the tools available to them.
                   </p>
                   <p className="mt-4">
-                    LG3 Digital is how I close that gap. You get one person who picks up the
-                    phone, knows your business by name, and does the work — not a ticket number
-                    in a queue.
+                    Now I&apos;m bringing that same experience to Wooster. Small businesses here
+                    deserve the same caliber of digital work that Fortune 100 companies take for
+                    granted — without the enterprise price tag or the agency runaround.
+                    That&apos;s what LG3 Digital is built to deliver.
                   </p>
                 </div>
 
