@@ -64,25 +64,29 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero — dark brand surface */}
-      <div className="bg-brand-dark">
-        <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      {/* Sticky nav — top-level so sticky works past the hero boundary */}
+      <header id="site-header" className="sticky top-0 z-50 bg-brand-dark">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <a href="#" className="text-base font-semibold tracking-[-0.02em] text-brand-ink">
             LG3 <span className="text-accent">Digital</span>
           </a>
           <nav className="hidden gap-8 text-sm font-medium sm:flex" style={{ color: "oklch(97% 0.01 275 / 55%)" }}>
             <a href="#services" className="transition-colors hover:text-brand-ink">Services</a>
-            <a href="#approach" className="transition-colors hover:text-brand-ink">How we work</a>
+            <a href="#about" className="transition-colors hover:text-brand-ink">About</a>
+            <a href="#approach" className="transition-colors hover:text-brand-ink">Our approach</a>
             <a href="#contact" className="transition-colors hover:text-brand-ink">Contact</a>
           </nav>
           <a
             href="#contact"
-            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-85"
+            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-85 active:scale-[0.97]"
           >
             Get started
           </a>
-        </header>
+        </div>
+      </header>
 
+      {/* Hero — dark brand surface */}
+      <div className="bg-brand-dark">
         <section className="mx-auto max-w-6xl px-6 pb-16 pt-10 sm:pb-24 sm:pt-14">
           <p className="hero-animate text-sm font-medium text-brand-ink" style={{ opacity: 0.45, letterSpacing: "0.04em" }}>
             Wooster, Ohio
@@ -109,13 +113,13 @@ export default function Home() {
           <div className="hero-animate hero-delay-3 mt-10 flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-85"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-85 active:scale-[0.97]"
             >
               Book a free consult
             </a>
             <a
               href="#services"
-              className="rounded-full border px-6 py-3 text-sm font-semibold text-brand-ink transition-colors"
+              className="rounded-full border px-6 py-3 text-sm font-semibold text-brand-ink transition-colors active:scale-[0.97]"
               style={{ borderColor: "oklch(97% 0.01 275 / 22%)" }}
             >
               See what we do
@@ -150,6 +154,18 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <div
+              data-reveal="slide-up"
+              className="mt-14 flex items-center gap-6 border-t border-line pt-10"
+            >
+              <a
+                href="#contact"
+                className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-85 active:scale-[0.97]"
+              >
+                Book a free consult
+              </a>
+              <span className="text-sm text-muted">No commitment. Reply within a day.</span>
+            </div>
           </div>
         </section>
 
@@ -261,6 +277,7 @@ export default function Home() {
                 <h2
                   className="text-balance font-semibold tracking-[-0.025em] text-ink"
                   style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)" }}
+                  data-reveal="slide-up"
                 >
                   Let&apos;s talk about your business
                 </h2>

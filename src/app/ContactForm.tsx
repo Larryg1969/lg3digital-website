@@ -29,7 +29,7 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "rounded-lg border border-line bg-bg px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted focus:border-brand";
+    "rounded-lg border border-line bg-bg px-4 py-3 text-base text-ink outline-none transition-[border-color,box-shadow] placeholder:text-muted focus:border-brand focus:shadow-[0_0_0_3px_oklch(46%_0.16_275_/_15%)]";
 
   return (
     <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
@@ -70,18 +70,18 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="w-full rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-ink transition-opacity hover:opacity-90 disabled:opacity-50 sm:w-auto"
+          className="w-full rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-ink transition-[opacity,transform] hover:opacity-90 active:scale-[0.97] disabled:opacity-50 sm:w-auto"
         >
           {status === "sending" ? "Sending…" : "Send message"}
         </button>
 
         {status === "success" && (
-          <p className="text-sm font-medium" style={{ color: "oklch(55% 0.15 145)" }}>
+          <p className="status-message text-sm font-medium" style={{ color: "oklch(55% 0.15 145)" }}>
             Message sent — we&apos;ll be in touch soon!
           </p>
         )}
         {status === "error" && (
-          <p className="text-sm font-medium" style={{ color: "oklch(55% 0.18 25)" }}>
+          <p className="status-message text-sm font-medium" style={{ color: "oklch(55% 0.18 25)" }}>
             Something went wrong. Email us at hello@lg3digital.com.
           </p>
         )}
