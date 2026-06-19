@@ -78,7 +78,7 @@ export default function Home() {
           </nav>
           <a
             href="#contact"
-            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink transition-opacity hover:opacity-85 active:scale-[0.97]"
+            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-ink transition-[opacity,transform] hover:opacity-85 active:scale-[0.97]"
           >
             Get started
           </a>
@@ -113,13 +113,13 @@ export default function Home() {
           <div className="hero-animate hero-delay-3 mt-10 flex flex-wrap gap-4">
             <a
               href="#contact"
-              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-85 active:scale-[0.97]"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-[opacity,transform] hover:opacity-85 active:scale-[0.97]"
             >
               Book a free consult
             </a>
             <a
               href="#services"
-              className="rounded-full border px-6 py-3 text-sm font-semibold text-brand-ink transition-colors active:scale-[0.97]"
+              className="rounded-full border px-6 py-3 text-sm font-semibold text-brand-ink transition-[colors,transform] active:scale-[0.97]"
               style={{ borderColor: "oklch(97% 0.01 275 / 22%)" }}
             >
               See what we do
@@ -160,7 +160,7 @@ export default function Home() {
             >
               <a
                 href="#contact"
-                className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-85 active:scale-[0.97]"
+                className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition-[opacity,transform] hover:opacity-85 active:scale-[0.97]"
               >
                 Book a free consult
               </a>
