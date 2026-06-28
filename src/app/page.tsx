@@ -169,6 +169,70 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Who we help */}
+        <section className="bg-brand-dark border-t border-white/10">
+          <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+            <div data-reveal="slide-up" className="mb-14">
+              <p className="text-sm font-medium text-accent" style={{ letterSpacing: "0.01em" }}>Who we help</p>
+              <h2
+                className="mt-3 text-balance font-semibold tracking-[-0.025em] text-brand-ink"
+                style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)" }}
+              >
+                From one-person shops to growing teams
+              </h2>
+            </div>
+            <div className="grid gap-8 sm:grid-cols-3">
+              {[
+                {
+                  img: "/customer-solo.png",
+                  tag: "Solo proprietor",
+                  heading: "Just you running the show",
+                  body: "Realtors, accountants, consultants, tradespeople — one person, one laptop, no IT support. We handle the digital side so you can focus on clients.",
+                  i: 0,
+                },
+                {
+                  img: "/customer-team.png",
+                  tag: "Small team",
+                  heading: "A team that's outgrown the basics",
+                  body: "Dental offices, law firms, small retailers — you've got 3–10 people and need systems, a real online presence, and someone who picks up the phone.",
+                  i: 1,
+                },
+                {
+                  img: "/customer-office.png",
+                  tag: "Growing business",
+                  heading: "Ready for the next level",
+                  body: "Manufacturers, service companies, medical practices — 10–50 employees who need custom tools, AI workflows, and staff training to stay ahead.",
+                  i: 2,
+                },
+              ].map(({ img, tag, heading, body, i }) => (
+                <div
+                  key={tag}
+                  data-reveal="slide-up"
+                  style={{ ["--i" as string]: i }}
+                  className="flex flex-col"
+                >
+                  <div className="overflow-hidden rounded-xl">
+                    <img
+                      src={img}
+                      alt={heading}
+                      className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                    />
+                  </div>
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-accent">
+                    {tag}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold tracking-[-0.02em] text-brand-ink">
+                    {heading}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6" style={{ color: "oklch(80% 0.015 275)" }}>
+                    {body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* About */}
         <section id="about" className="bg-bg border-t border-line">
           <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
